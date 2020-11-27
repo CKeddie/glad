@@ -111,6 +111,9 @@ target_include_directories(glad
     PUBLIC
         $<BUILD_INTERFACE:${GLAD_INCLUDE_DIRS}>)
 
+set_target_properties(glad PROPERTIES FOLDER "Dependencies/Graphics/GLAD")
+set_target_properties(glad-generate-files PROPERTIES FOLDER "Dependencies/Graphics/GLAD")
+
 # Are we building a shared library?
 get_target_property(library_type glad TYPE)
 if (library_type STREQUAL SHARED_LIBRARY)
